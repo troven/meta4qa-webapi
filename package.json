@@ -1,0 +1,40 @@
+{
+  "name": "apigeek-dialect-webapi",
+  "version": "1.6.0",
+  "description": "A BDD Dialect for REST APIs",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "cd test/self && affirm"
+  },
+  "bugs": {
+    "url": "https://github.com/apigeek/project/issues",
+    "email": "lee.curtis@troven.com.au"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apigeek/apigee-dialect-webapi.git"
+  },
+  "author": "lee.curtis@troven.com.au",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "JSONPath": "^0.11.2",
+    "async": "^2.0.1",
+    "chai": "^3.5.0",
+    "commander": "^2.9.0",
+    "csvtojson": "^0.5.14",
+    "lodash": "^4.15.0",
+    "mocha": "^2.5.3",
+    "net": "^1.0.2",
+    "promise": "^7.1.1",
+    "request": "^2.72.0",
+    "underscore": "^1.8.3",
+    "xmldom": "^0.1.22",
+    "xpath": "0.0.23",
+    "yadda": "^0.17.9",
+    "yaml": "^0.3.0"
+  },
+  "homepage": "https://github.com/apigeek/apigee-dialect-webapi",
+  "directories": {
+    "doc": "docs"
+  }
+}
