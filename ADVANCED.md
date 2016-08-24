@@ -37,7 +37,7 @@ Apigeek-Affirm was designed to support a declarative style so that tests are por
 
 To achieve portability, environment-specific properties can be declared in a "config" file.
 
-By default, affirm will try to load a configuration file called "affirm.json" from your current directory. 
+By default, affirm will try to load a configuration file called "apigeek.json" from your current directory. 
 
 If no file is found, then sensible default values are defined.
 
@@ -47,9 +47,9 @@ In this way, your BDD tests are neatly abstracted from your runtime configuratio
 
 To specify a custom configuration, use:
 
-	dialect --config config.json
+	$ apigeek --config config.json
 
-If you omit the --config option, then the "affirm.json" file in the current folder will be used.
+If you omit the --config option, then the "apigeek.json" file in the current folder will be used.
 
 Supplying a different "config" file for each environment allows Feature tests to be re-used across multiple environments.
 
@@ -68,7 +68,7 @@ I want my tests to authenticate
 
 You can specify sets of credentials for authentication (login) using the "agent" directive:
 
-		"agent": {
+		"agents": {
 			"default": {
 				"username": "someone",
 				"password": "TEST"
@@ -81,9 +81,15 @@ You can specify sets of credentials for authentication (login) using the "agent"
 
 This will configure two authentication agents - "default" and "robot". Each has separate credentials.
 
-The Gherkin vocabulary you to use different agents to perform Basic Authentication.
+The Web API Dialect allows multiple agents, about to perform Basic Authentication, OAUTH or something else.
 
-Experimental support for OAUTH 2.0 is also implemented.
+You can switch between agents using the CLI argument:
+
+	$ apigeek --agent=robot
+
+Or at runtime using an @agent annotation.
+
+Support for OAUTH is partially implemented.
 
 Authentication Vocabulary:
 ==========================
@@ -91,47 +97,82 @@ Authentication Vocabulary:
 	GIVEN I use basic authentication
 	    I login
 	    I authenticate
+
 	GIVEN I use basic authentication as $AGENT
 	    I login as $AGENT
 	    I authenticate as $AGENT
-	GIVEN I use OAuth2
+
+	GIVEN I use oauth
 	GIVEN I use OAuth2 as $AGENT
 
 For example: You login to a web service using:
 
 	GIVEN I login as robot
 
-See the [Affirm Vocabulary](docs/vocab.md) for details.
+See the [Web API Dialect](vocab.md) for details.
 
 I want to test APIs that use 2-way TLS
 ======================================
 
-If your server requires 2-way TLS, you can supply client certificates.
+If your environment requires 2-way TLS, you can use client certificates.
 
 	GIVEN I use a valid client certificate
 
-You can  refer to named certificates from within your scenarios.
+You can refer to named certificates from within your scenarios.
 
-		"certificate": {
+		"certificates": {
 			"valid": {
 				"key": "../etc/certs2/client/app-client.key.pem",
 				"cert": "../etc/certs2/client/app-client.crt.pem",
 				"ca": "../etc/certs2/ca/root-ca.crt.pem",
-				"passphrase": "test"
+				"passphrase": "not_very_secret"
 			}, 
 			"expired": { ... }
 		}
+		
+For production systems, you'll want to set the passphrase using an environment variable:
+
+	export APIGEEK_CERTIFICATES_VALID_PASSPHRASE=safer_secret
 
 Certificate Vocabulary
 ======================
 
+Once you have configured your client certificates, you can easily use them by name.
+
 	GIVEN I use a $CERT client certificate
 	    I use an $CERT client certificate
     
-See the [Affirm Vocabulary](docs/vocab.md) for details.
+See the [Web API Dialect](vocab.md) for details.
 
+I want to use a forward proxy
+=============================
 
-I want to perform operations before every scenario
+You can require that HTTP targets are reached via a HTTP(S) forward proxy. 
+
+You can set a "proxy" option in your ./apigeek.json config file, like this:
+
+	{
+		target: {
+			"hostname": "google.com" ,
+			"proxy": "localhost":3128
+		}
+	}
+
+Alternatively, you can set environment variables.
+
+	HTTP_PROXY / http_proxy
+	HTTPS_PROXY / https_proxy
+	NO_PROXY / no_proxy
+
+When HTTP_PROXY / http_proxy are set, they will be used to proxy non-SSL requests that do not have an explicit proxy configuration option present. 
+
+Similarly, HTTPS_PROXY / https_proxy will be respected for SSL requests that do not have an explicit proxy configuration option. 
+
+It is valid to define a proxy in one of the environment variables, but then override it for a specific request, using the proxy configuration option. 
+
+Furthermore, the proxy configuration option can be explicitly set to false / null to opt out of proxying altogether for that request.
+
+I want to login before every scenario
 ==================================================
 
 A feature test may contain a background that are prepended to each scenario.

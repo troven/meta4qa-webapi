@@ -1,19 +1,20 @@
 {
-	"protocol": "http",
-	"hostname": "localhost",
-	"port": "80",
-
 	"files": "files",
 
-	"target": {
+	"targets": {
 		"google": {
 			"protocol": "https",
 			"hostname": "google.com",
 			"port": "443"
+		},
+		"home": {
+			"protocol": "http",
+			"hostname": "localhost",
+			"port": "80"
 		}
 	},
 
-	"agent": {
+	"agents": {
 		"default": {
 			"username": "me@example.com"
 		},
@@ -22,7 +23,7 @@
 		}
 	},
 
-	"certificate": {
+	"certificates": {
 	},
 
 	"webhooks_disabled": {
