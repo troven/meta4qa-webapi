@@ -1,3 +1,5 @@
+![Continuous Assurance - Thanks to Travis-CI](https://travis-ci.org/apigeek/dialect-webapi.svg?branch=master)
+
 Dialect For Web APIS
 ====================
 
