@@ -5,7 +5,7 @@ A scenario describes a test case - essentially it's a list of instructions and e
 
 The framework interprets each step in the scenario using the [Web API Dialect](vocab.md). 
 
-Read about authentication, proxies and SSL/TLS in [Advanced Web APIs](ADVANCED.md) . 
+Read about authentication, proxies and SSL/TLS in [Advanced Web APIs](advanced.md) . 
 
 Let's create a simple example:
 
