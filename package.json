@@ -4,7 +4,7 @@
   "description": "An BDD Dialect for REST APIs",
   "main": "lib/index.js",
   "scripts": {
-    "test": "cd test/self && apigeek"
+    "test": "apigeek"
   },
   "bugs": {
     "url": "https://github.com/apigeek/project/issues",
