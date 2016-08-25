@@ -28,14 +28,26 @@ Note: The example deliberately contravenes best practice to showcase a few conce
 	6) Test that a Content-Type contains "text/html".
 	7) Check that "ResponseSucceeded" variable was set to "true" in line 3. This is redundant since line 4 already makes same assertion.
 	
-Configuing Targets
-==================
+Working with multiple hosts
+===========================
 
-You can create a "target" secion in your configuration file. 
+You can create a "target" secion in your configuration that allows you to define "hostname", "protocol", "port" and "basePath" outside of your scenarios.
 
-For more sophisticated environments, you can specify a "targets" section that included named targets. 
+	"target": {
+		"google": {
+			"protocol": "https",
+			"hostname": "google.com"
+		}
+	}
 
-Then you can switch targets using @target or --target within feature and/or shell scripts.
+Now, we can simply write:
+
+    When I GET /
+
+Now, you can run the same feature but specify a different config file to switch targets - for example: from dev -> test -> production.
+
+For more sophisticated environments, you can specify a "targets" section to support named targets. 
+
 
 	"targets": {
 		"google": {
@@ -49,9 +61,7 @@ Then you can switch targets using @target or --target within feature and/or shel
 		}
 	}
 
-Now, we can simply write:
-
-    When I GET /
+Then you can switch targets using @target within a feature, scenario or --target for CLI and shell scripts.
 
 This allows us to re-use our features in new environments without recoding. For example:
 
