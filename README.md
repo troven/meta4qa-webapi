@@ -9,7 +9,7 @@ Read about authentication, proxies and SSL/TLS in [Advanced Web APIs](advanced.m
 
 Let's create a simple example:
 
-	@dialect=webapi
+    @dialect=webapi
     Scenario: Test Google's homepage 
 
     Given I enable redirects
