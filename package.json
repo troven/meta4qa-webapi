@@ -1,6 +1,6 @@
 {
   "name": "apigeek-dialect-webapi",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "An BDD Dialect for REST APIs",
   "main": "lib/index.js",
   "scripts": {
