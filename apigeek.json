@@ -7,7 +7,7 @@
 			"hostname": "google.com",
 			"port": "443"
 		},
-		"home": {
+		"localhost": {
 			"protocol": "http",
 			"hostname": "localhost",
 			"port": "80"
@@ -24,14 +24,6 @@
 	},
 
 	"certificates": {
-	},
-
-	"webhooks_disabled": {
-		"debug": false,
-		"slack": {
-			"disabled": true,
-			"url": "https://hooks.slack.com/services/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"
-		}
 	}
 }
 

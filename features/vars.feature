@@ -18,24 +18,24 @@ Feature: Verify that 'variables' feature is working
     And $.[1].what in test should match greetings
     And $.[1].who in test should match earthling
 
-
+@bug
   Scenario: Test set body JSON sample - indirect via variable
 
     Given I set test to JSON:
   --------
   { "hello": "world", "earth": { "moon": "cheese" } }
   --------
-    And I set body to test
     Then hello in test should match world
     And earth.moon in test should match cheese
-    And I assert this.request.json.hello=="world"
-    And I assert this.request.json.earth.moon=="cheese"
+    And I set body to test
+    Then I assert body.hello=="world"
+    And I assert body.earth.moon=="cheese"
 
 
-
+@bug
   Scenario: Test set body to JSON sample - direct
 
-    Given I set body to JSON:
+    Given I set this.request.json to JSON:
   --------
   { "hello": "world", "earth": { "moon": "cheese" } }
   --------
