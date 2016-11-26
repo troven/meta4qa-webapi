@@ -1,5 +1,5 @@
-Dialect For Web APIS
-====================
+BDD Dialect For Web APIs
+========================
 
 A scenario describes a test case - essentially it's a list of instructions and expectations.
 
