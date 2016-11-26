@@ -1,6 +1,6 @@
 {
   "name": "meta4qa-webapi",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "An BDD Dialect for REST APIs",
   "main": "lib/index.js",
   "scripts": {
