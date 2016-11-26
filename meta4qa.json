@@ -1,0 +1,30 @@
+{
+	"files": "features/files",
+
+	"targets": {
+		"google": {
+			"protocol": "https",
+			"hostname": "google.com",
+			"port": "443"
+		},
+		"localhost": {
+			"protocol": "http",
+			"hostname": "localhost",
+			"port": "80"
+		}
+	},
+
+	"agents": {
+		"default": {
+			"username": "me@example.com"
+		},
+		"me": {
+
+		}
+	},
+
+	"certificates": {
+	}
+}
+
+

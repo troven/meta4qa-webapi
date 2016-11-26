@@ -33,11 +33,11 @@ If we wanted to define "https://google.com:443" as our endpoint, we'd use a JSON
 I want to re-use tests across multiple endpoints
 =================================================
 
-Apigeek-Affirm was designed to support a declarative style so that tests are portable between dev, test and production environments. 
+meta4qa-Affirm was designed to support a declarative style so that tests are portable between dev, test and production environments. 
 
 To achieve portability, environment-specific properties can be declared in a "config" file.
 
-By default, affirm will try to load a configuration file called "apigeek.json" from your current directory. 
+By default, affirm will try to load a configuration file called "meta4qa.json" from your current directory. 
 
 If no file is found, then sensible default values are defined.
 
@@ -47,9 +47,9 @@ In this way, your BDD tests are neatly abstracted from your runtime configuratio
 
 To specify a custom configuration, use:
 
-	$ apigeek --config config.json
+	$ meta4qa --config config.json
 
-If you omit the --config option, then the "apigeek.json" file in the current folder will be used.
+If you omit the --config option, then the "meta4qa.json" file in the current folder will be used.
 
 Supplying a different "config" file for each environment allows Feature tests to be re-used across multiple environments.
 
@@ -85,7 +85,7 @@ The Web API Dialect allows multiple agents, about to perform Basic Authenticatio
 
 You can switch between agents using the CLI argument:
 
-	$ apigeek --agent=robot
+	$ meta4qa --agent=robot
 
 Or at runtime using an @agent annotation.
 
@@ -132,7 +132,7 @@ You can refer to named certificates from within your scenarios.
 		
 For production systems, you'll want to set the passphrase using an environment variable:
 
-	export APIGEEK_CERTIFICATES_VALID_PASSPHRASE=safer_secret
+	export meta4qa_CERTIFICATES_VALID_PASSPHRASE=safer_secret
 
 Certificate Vocabulary
 ======================
@@ -149,7 +149,7 @@ I want to use a forward proxy
 
 You can require that HTTP targets are reached via a HTTP(S) forward proxy. 
 
-You can set a "proxy" option in your ./apigeek.json config file, like this:
+You can set a "proxy" option in your ./meta4qa.json config file, like this:
 
 	{
 		target: {

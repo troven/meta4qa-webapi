@@ -65,5 +65,5 @@ Then you can switch targets using @target within a feature, scenario or --target
 
 This allows us to re-use our features in new environments without recoding. For example:
 
-	$ apigeek --target=yahoo
+	$ meta4qa --target=yahoo
 
