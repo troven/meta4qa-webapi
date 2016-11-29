@@ -1,5 +1,7 @@
 {
-	"files": "features/files",
+	"paths": {
+		"files": "features/files"
+},
 
 	"targets": {
 		"google": {
