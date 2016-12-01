@@ -1,44 +1,44 @@
 {
-	"name": "meta4qa-webapi",
-	"version": "1.9.3",
-	"description": "meta4qa dialect for RESTful APIs",
-	"main": "lib/index.js",
-	"scripts": {
-		"test": "exit 0"
-	},
-	"bugs": {
-		"url": "https://github.com/troven/project/issues",
-		"email": "cto@troven.com.au"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/troven/meta4qa-webapi.git"
-	},
-	"author": "cto@troven.com.au",
-	"license": "Apache-2.0",
-	"dependencies": {
-		"JSONPath": "^0.11.2",
-		"async": "^2.0.1",
-		"debug": "^2.3.3",
-		"net": "^1.0.2",
-		"promise": "^7.1.1",
-		"request": "^2.72.0",
-		"speakeasy": "^2.0.0",
-		"xmldom": "^0.1.22",
-		"xpath": "0.0.23",
-		"yaml": "^0.3.0"
-	},
-	"homepage": "https://troven.com.au/pkg/meta4qa",
-	"directories": {
-		"doc": "docs"
-	},
-	"peerDependencies": {
-		"meta4qa-common": "^1.9.0",
-		"meta4qa-webapi": "^1.9.0"
-	},
-	"ignore-devDependencies": {
-		"grunt": "^1.0.1",
-		"grunt-contrib-jshint": "^1.0.0",
-		"grunt-contrib-yuidoc": "^1.0.0"
-	}
+  "name": "meta4qa-webapi",
+  "version": "1.9.4",
+  "description": "meta4qa dialect for RESTful APIs",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "bugs": {
+    "url": "https://github.com/troven/project/issues",
+    "email": "cto@troven.com.au"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/troven/meta4qa-webapi.git"
+  },
+  "author": "cto@troven.com.au",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "JSONPath": "^0.11.2",
+    "async": "^2.0.1",
+    "debug": "^2.3.3",
+    "net": "^1.0.2",
+    "promise": "^7.1.1",
+    "request": "^2.72.0",
+    "speakeasy": "^2.0.0",
+    "xmldom": "^0.1.22",
+    "xpath": "0.0.23",
+    "yaml": "^0.3.0"
+  },
+  "homepage": "https://troven.com.au/pkg/meta4qa",
+  "directories": {
+    "doc": "docs"
+  },
+  "peerDependencies": {
+    "meta4qa-common": "^1.9.0",
+    "meta4qa-webapi": "^1.9.0"
+  },
+  "ignore-devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-yuidoc": "^1.0.0"
+  }
 }
