@@ -1,6 +1,6 @@
 {
   "name": "meta4qa-webapi",
-  "version": "1.9.6",
+  "version": "1.9.7",
   "description": "meta4qa dialect for RESTful APIs",
   "main": "lib/index.js",
   "scripts": {
